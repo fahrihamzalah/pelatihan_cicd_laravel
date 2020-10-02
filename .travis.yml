@@ -27,8 +27,8 @@ jobs:
     - stage: "Build Docker Image"
       name: "Build Images Docker" 
       script:
-      - echo "Github00" | docker login -u "fahrihmz" --password-stdin
+      - echo "$Github00" | docker login -u "$fahrihmz" --password-stdin
       - docker build -t travis-ci-build-stages-demo .
       - docker images
-      - docker tag travis-ci-build-stages-demo fahrihmz/pelatihan-cicd-laravel
-      - docker push fahrihmz/pelatihan-cicd-laravel
+      - docker tag travis-ci-build-stages-demo $fahrihmz/pelatihan-cicd-laravel
+      - docker push $fahrihmz/pelatihan-cicd-laravel
